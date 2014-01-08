@@ -16,7 +16,7 @@ public class App
         rc.register( HelloWorldResource.class );
         // ADD HERE!
         // rc.register( PeopleResource.class );
-        // rc.register( PeoplePurchases.class );
+        // rc.register( PeoplePurchasesResource.class );
         // ...
 
         // This container (which is a servlet) will route requests to our resources
@@ -26,12 +26,12 @@ public class App
         // in a holder.
         ServletHolder h = new ServletHolder( sc );
 
-        // Jetty server needs a handler to requests.
-        // Here we will make a handler for servlets
+        // Jetty server needs a handler to process requests.
+        // We use a handler that forwards to servlets
         ServletHandler sh = new ServletHandler();
         // and register an jersey resource config (which is wrapped in a ServletContainer which is wrapped in
         // a ServletHolder)
-        sh.addServletWithMapping( h, "/" );
+        sh.addServletWithMapping( h, "/*" );
 
         // The simplest possibly jetty server
         Server server = new Server(8080);

@@ -24,7 +24,7 @@
 
 	  <!--
 	  	Here we include jersey.
-	    We will be using jersey with servlets for jetty so we need the servlet container
+	    We will be using jersey with servlets for jetty so we need the servlet container artifact
 	   -->
 	  <dependency>
 		  <groupId>org.glassfish.jersey.containers</groupId>
@@ -42,7 +42,7 @@
 	  </dependency>
 
 	  <!--
-	  	To use servlets with jetty
+	  	To use servlets with jetty we add this artifact
 	  -->
 	  <dependency>
 		  <groupId>org.eclipse.jetty</groupId>
